@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "751089404739",
+    "firebase_url": "https://kursach-19a47-default-rtdb.firebaseio.com",
+    "project_id": "kursach-19a47",
+    "storage_bucket": "kursach-19a47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751089404739:android:0fcaa95124594dc1937df6",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751089404739-505uef9a3e2smv8g806mjcrf0disvdfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqJaJz9Ib6uoUGZbTn-u7dHWjU0yOzsrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751089404739-505uef9a3e2smv8g806mjcrf0disvdfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
