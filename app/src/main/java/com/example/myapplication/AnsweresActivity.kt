@@ -1,8 +1,6 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,10 +20,7 @@ class AnsweresActivity : AppCompatActivity() {
         problemKey = intent.getStringExtra("problemKey") ?: ""
         problemTitle = intent.getStringExtra("problemTitle") ?: "" // Получаем заголовок проблемы
 
-        Log.d("AnsweresActivity", "problemTitle: $problemTitle") // Проверяем значение problemTitle
-
         title = problemTitle // Устанавливаем заголовок активити
-
 
         recyclerView = findViewById(R.id.recyclerViewAnswers)
         answerAdapter = AnswerAdapter(answerList)
@@ -45,9 +40,6 @@ class AnsweresActivity : AppCompatActivity() {
                     }
                 }
                 answerAdapter.notifyDataSetChanged()
-
-                // Установка заголовка проблемы в TextView
-                //tvProblemTitle.text = snapshot.child(problemKey)?.child("problemTitle")?.getValue(String::class.java) ?: "Problem Title"
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -56,3 +48,4 @@ class AnsweresActivity : AppCompatActivity() {
         })
     }
 }
+
