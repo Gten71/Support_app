@@ -24,29 +24,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".SignInActivity"
-            android:label="Sign In" />
-        <activity
-            android:name=".SignUpActivity"
-            android:label="Sign Up" />
         <activity android:name=".QuestionActivity" />
         <activity
-            android:name=".UserActivity"
+            android:name=".DefaultUserScreen.UserActivity"
             android:label="User Activity" />
         <activity
-            android:name=".RespondActivity"
+            android:name=".EmployerScreen.RespondActivity"
             android:label="Respond Activity" />
-
         <activity
-            android:name=".AnsweresActivity"
+            android:name=".DefaultUserScreen.AnsweresActivity"
             android:label="Answeres Activity" />
         <activity
-            android:name=".EmployerActivity"
+            android:name=".EmployerScreen.EmployerActivity"
             android:label="Employer Activity" />
         <activity
-            android:name=".TextEntryActivity"
+            android:name=".DefaultUserScreen.TextEntryActivity"
             android:label="Text Entry" />
 
     </application>

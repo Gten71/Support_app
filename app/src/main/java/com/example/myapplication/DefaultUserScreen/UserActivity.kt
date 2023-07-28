@@ -1,10 +1,11 @@
-package com.example.myapplication
+package com.example.myapplication.DefaultUserScreen
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import android.content.Intent
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.QuestionActivity
+import com.example.myapplication.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class UserActivity : AppCompatActivity() {

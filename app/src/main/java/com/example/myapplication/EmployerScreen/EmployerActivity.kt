@@ -1,13 +1,13 @@
-package com.example.myapplication
+package com.example.myapplication.EmployerScreen
 
-import ProblemAdapter
+import com.example.myapplication.Adapter.ProblemAdapter
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
+import com.example.myapplication.Models.Problem
+import com.example.myapplication.R
 import com.google.firebase.database.*
 
 class EmployerActivity : AppCompatActivity() {

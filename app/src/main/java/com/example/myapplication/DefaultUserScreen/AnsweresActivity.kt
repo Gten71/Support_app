@@ -1,9 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.DefaultUserScreen
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Adapter.AnswerAdapter
+import com.example.myapplication.QuestionActivity
+import com.example.myapplication.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 
 class AnsweresActivity : AppCompatActivity() {
@@ -11,7 +17,8 @@ class AnsweresActivity : AppCompatActivity() {
     private lateinit var answerAdapter: AnswerAdapter
     private val answerList: MutableList<Pair<String, String>> = mutableListOf()
     private lateinit var problemKey: String
-    private lateinit var problemTitle: String // Добавляем переменную для хранения заголовка проблемы
+    private lateinit var problemTitle: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +33,16 @@ class AnsweresActivity : AppCompatActivity() {
         answerAdapter = AnswerAdapter(answerList)
         recyclerView.adapter = answerAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-
+        val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        floatingActionButton.setOnClickListener {
+            // Replace NewActivity::class.java with the activity you want to navigate to.
+            val intent = Intent(this, QuestionActivity::class.java)
+            startActivity(intent)
+        }
+        val imageClose = findViewById<ImageView>(R.id.imageClose)
+        imageClose.setOnClickListener {
+            finish()
+        }
         // Получение списка ответов на выбранную проблему из Firebase
         val databaseRef = FirebaseDatabase.getInstance().reference.child("responses")
         databaseRef.orderByChild("problemKey").equalTo(problemKey).addValueEventListener(object : ValueEventListener {

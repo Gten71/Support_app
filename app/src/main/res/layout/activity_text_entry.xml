@@ -20,6 +20,36 @@
         android:minLines="5"
         android:gravity="top" />
 
+    <TextView
+        android:id="@+id/tvSelectedEmployer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Выбранный работодатель: "
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupEmployers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Replace 'Your_Employer_Name' with the actual name of the employer -->
+        <RadioButton
+            android:id="@+id/rbEmployerYourEmployer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your_Employer_Name" />
+
+        <!-- Add more RadioButtons for other employers if needed -->
+        <!-- <RadioButton
+            android:id="@+id/rbEmployerOtherEmployer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other_Employer_Name" /> -->
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/btnSend"
         android:layout_width="match_parent"

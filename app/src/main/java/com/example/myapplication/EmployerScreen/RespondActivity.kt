@@ -1,12 +1,17 @@
-package com.example.myapplication
+package com.example.myapplication.EmployerScreen
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.Models.Problem
+import com.example.myapplication.QuestionActivity
+import com.example.myapplication.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -30,6 +35,17 @@ class RespondActivity : AppCompatActivity() {
         // Заполнение текстовых полей заголовка и содержания проблемы
         tvProblemTitle.text = problem.title
         tvProblemContent.text = problem.content
+
+        val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        floatingActionButton.setOnClickListener {
+            // Replace NewActivity::class.java with the activity you want to navigate to.
+            val intent = Intent(this, QuestionActivity::class.java)
+            startActivity(intent)
+        }
+        val imageClose = findViewById<ImageView>(R.id.imageClose)
+        imageClose.setOnClickListener {
+            finish()
+        }
 
         btnSendResponse.setOnClickListener {
             val responseText = etResponse.text.toString().trim()

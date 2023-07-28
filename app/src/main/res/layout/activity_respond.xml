@@ -1,45 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationX="-14dp">
+
+        <ImageView
+            android:id="@+id/imageClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:srcCompat="@drawable/baseline_arrow_back_24" />
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/tvProblemTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Проблема"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:text="Проблема" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
+
 
     <TextView
         android:id="@+id/tvProblemContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Содержание проблемы"
         android:textSize="16sp"
-        android:text="Содержание проблемы" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProblemTitle"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Ваш ответ:"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:text="Ваш ответ" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProblemContent"
+        tools:layout_editor_absoluteX="-16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
     <EditText
         android:id="@+id/etResponse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
         android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
         android:minLines="5"
-        android:maxLines="10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
     <Button
         android:id="@+id/btnSendResponse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Отправить ответ" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Отправить ответ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etResponse" />
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/floatingActionButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="34dp"
+    android:layout_marginBottom="108dp"
+    android:clickable="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:srcCompat="@drawable/baseline_question_mark_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
