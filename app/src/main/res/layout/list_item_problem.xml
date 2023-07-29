@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#009688"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="6dp"/>
 
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#21005d"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
@@ -32,5 +32,16 @@
         android:layout_height="1dp"
         android:background="#DDDDDD"
         android:layout_marginTop="6dp"/>
+    <!-- New ImageView for the photo -->
+    <ImageView
+        android:id="@+id/ivProblemPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop" />
+
+
+
 
 </LinearLayout>

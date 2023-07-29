@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="?attr/actionBarTheme"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:translationX="-14dp">
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageClose"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            app:srcCompat="@drawable/baseline_arrow_back_24" />
-    </RelativeLayout>
+            android:translationX="-14dp">
 
-</androidx.appcompat.widget.Toolbar>
+            <ImageView
+                android:id="@+id/imageClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                app:srcCompat="@drawable/baseline_arrow_back_24" />
+        </RelativeLayout>
 
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Title and Content EditText -->
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
@@ -52,6 +55,7 @@ android:layout_height="match_parent">
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"/>
 
+    <!-- Select Employer TextView and RadioGroup -->
     <TextView
         android:id="@+id/tvSelectedEmployer"
         android:layout_width="match_parent"
@@ -91,9 +95,9 @@ android:layout_height="match_parent">
             android:layout_height="wrap_content"
             android:text="Gasman" />
 
-
     </RadioGroup>
 
+    <!-- Send Button -->
     <Button
         android:id="@+id/btnSend"
         android:layout_width="match_parent"
@@ -104,16 +108,37 @@ android:layout_height="match_parent">
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"/>
 
+    <!-- Choose Image Button -->
+
+    <!-- ImageView for Selected Image -->
+    <Button
+        android:id="@+id/btnChooseImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Choose Image"
+        app:layout_constraintTop_toBottomOf="@+id/btnSend"
+        tools:layout_editor_absoluteX="126dp" />
+
+    <ImageView
+        android:id="@+id/selectedImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/btnChooseImage" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/floatingActionButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="34dp"
-    android:layout_marginBottom="108dp"
-    android:clickable="true"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:srcCompat="@drawable/baseline_question_mark_24" />
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="108dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_question_mark_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

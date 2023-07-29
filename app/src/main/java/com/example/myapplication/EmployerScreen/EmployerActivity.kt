@@ -1,15 +1,14 @@
 package com.example.myapplication.EmployerScreen
 
-import com.example.myapplication.Adapter.ProblemAdapter
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Adapter.ProblemAdapter
 import com.example.myapplication.EmployerQuestionActivity
 import com.example.myapplication.MainActivity
 import com.example.myapplication.Models.Problem
-import com.example.myapplication.QuestionActivity
 import com.example.myapplication.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
@@ -65,11 +64,9 @@ class EmployerActivity : AppCompatActivity() {
             override fun onItemClick(problem: Problem) {
                 val intent = Intent(this@EmployerActivity, RespondActivity::class.java)
                 intent.putExtra("problem", problem)
-                intent.putExtra("problemKey", problem.key)
-                intent.putExtra("problemTitle", problem.title)
                 startActivity(intent)
             }
         })
-
     }
 }
+

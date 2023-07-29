@@ -2,7 +2,7 @@ package com.example.myapplication.EmployerScreen
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -15,39 +15,50 @@ import com.example.myapplication.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.bumptech.glide.Glide
 
 class RespondActivity : AppCompatActivity() {
     private lateinit var etResponse: EditText
     private lateinit var tvProblemTitle: TextView
     private lateinit var tvProblemContent: TextView
+    private lateinit var ivProblemPhoto: ImageView // Добавляем переменную для ImageView
     private lateinit var problem: Problem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_respond)
 
-        problem = intent.getSerializableExtra("problem") as Problem
-
+        // Связываем элементы интерфейса с их ID
         tvProblemTitle = findViewById(R.id.tvProblemTitle)
         tvProblemContent = findViewById(R.id.tvProblemContent)
         etResponse = findViewById(R.id.etResponse)
-        val btnSendResponse = findViewById<Button>(R.id.btnSendResponse)
+        ivProblemPhoto = findViewById(R.id.ivProblemPhoto)
 
-        // Заполнение текстовых полей заголовка и содержания проблемы
+        // Получаем данные о проблеме из интента
+        problem = intent.getSerializableExtra("problem") as Problem
+
+        // Отображаем данные на экране
         tvProblemTitle.text = problem.title
         tvProblemContent.text = problem.content
 
-        val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        floatingActionButton.setOnClickListener {
-            // Replace NewActivity::class.java with the activity you want to navigate to.
-            val intent = Intent(this, EmployerQuestionActivity::class.java)
-            startActivity(intent)
-        }
-        val imageClose = findViewById<ImageView>(R.id.imageClose)
-        imageClose.setOnClickListener {
-            finish()
+        // Проверяем, есть ли URL фото в объекте проблемы
+        val photoUrl = problem.photoUrl
+        if (photoUrl != null && photoUrl.isNotEmpty()) {
+            Glide.with(this)
+                .load(photoUrl)
+                .placeholder(R.drawable.placeholder_image)
+                .error(R.drawable.error_image)
+                .into(ivProblemPhoto)
+
+            // Показываем ImageView, если есть фото
+            ivProblemPhoto.visibility = View.VISIBLE
+        } else {
+            // Прячем ImageView, если нет фото
+            ivProblemPhoto.visibility = View.GONE
         }
 
+        // Добавляем обработчик нажатия кнопки "Send response"
+        val btnSendResponse = findViewById<Button>(R.id.btnSendResponse)
         btnSendResponse.setOnClickListener {
             val responseText = etResponse.text.toString().trim()
             if (responseText.isNotEmpty()) {
@@ -57,25 +68,36 @@ class RespondActivity : AppCompatActivity() {
                     val responseKey = databaseRef.push().key
 
                     if (responseKey != null) {
-                        Log.d("RespondActivity", "Problem Key: ${problem.key}")
                         val responseData = HashMap<String, Any>()
                         responseData["userId"] = userId
                         responseData["problemKey"] = problem.key
-                        responseData["problemTitle"] = problem.title // Добавляем problemTitle
+                        responseData["problemTitle"] = problem.title
                         responseData["responseText"] = responseText
 
                         databaseRef.child(responseKey).setValue(responseData)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
-
                                     finish()
                                 } else {
+                                    // Обработка ошибки, если не удалось отправить ответ
                                 }
                             }
                     }
                 }
             }
         }
+
+        // Добавляем обработчик нажатия на кнопку "Question"
+        val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        floatingActionButton.setOnClickListener {
+            val intent = Intent(this, EmployerQuestionActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Добавляем обработчик нажатия на кнопку "Close"
+        val imageClose = findViewById<ImageView>(R.id.imageClose)
+        imageClose.setOnClickListener {
+            finish()
+        }
     }
 }
-
