@@ -6,8 +6,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.EmployerQuestionActivity
+import com.example.myapplication.MainActivity
 import com.example.myapplication.Models.Problem
+import com.example.myapplication.QuestionActivity
 import com.example.myapplication.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 
 class EmployerActivity : AppCompatActivity() {
@@ -23,6 +27,19 @@ class EmployerActivity : AppCompatActivity() {
         problemAdapter = ProblemAdapter(problemList)
         recyclerView.adapter = problemAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+        val btnExit = findViewById<FloatingActionButton>(R.id.btnExit)
+        val btnQuestion = findViewById<FloatingActionButton>(R.id.questionEmployer)
+
+        btnQuestion.setOnClickListener {
+            val intent = Intent(this, EmployerQuestionActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnExit.setOnClickListener {
+            finish()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         // Получение списка проблем из Firebase
         val databaseRef = FirebaseDatabase.getInstance().reference.child("problems")

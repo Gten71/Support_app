@@ -1,15 +1,20 @@
 package com.example.myapplication.DefaultUserScreen
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.EmployerQuestionActivity
+import com.example.myapplication.QuestionActivity
 import com.example.myapplication.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -33,6 +38,16 @@ class TextEntryActivity : AppCompatActivity() {
             val content = etContent.text.toString().trim()
 
             val selectedEmployerId = radioGroupEmployers.checkedRadioButtonId
+
+            val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+            floatingActionButton.setOnClickListener {
+                val intent = Intent(this, QuestionActivity::class.java)
+                startActivity(intent)
+            }
+            val imageClose = findViewById<ImageView>(R.id.imageClose)
+            imageClose.setOnClickListener {
+                finish()
+            }
 
             if (title.isNotEmpty() && content.isNotEmpty() && selectedEmployerId != -1) {
                 val selectedEmployer = findViewById<RadioButton>(selectedEmployerId)?.text.toString()

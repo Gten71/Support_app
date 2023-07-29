@@ -22,24 +22,28 @@ android:layout_height="match_parent">
         app:layout_constraintTop_toBottomOf="@+id/btnText"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Exit"
-        app:layout_constraintTop_toBottomOf="@+id/btnAnswers"
-        tools:layout_editor_absoluteX="0dp" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/questionUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="34dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="158dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_question_mark_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionUser"
+        app:layout_constraintVertical_bias="0.186"
+        app:srcCompat="@drawable/baseline_exit_to_app_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

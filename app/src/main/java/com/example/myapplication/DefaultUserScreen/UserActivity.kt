@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.MainActivity
 import com.example.myapplication.QuestionActivity
 import com.example.myapplication.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -15,8 +16,8 @@ class UserActivity : AppCompatActivity() {
 
         val btnText = findViewById<Button>(R.id.btnText)
         val btnAnswers = findViewById<Button>(R.id.btnAnswers)
-        val btnExit = findViewById<Button>(R.id.btnExit)
-        val btnQuestion = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        val btnExit = findViewById<FloatingActionButton>(R.id.btnExit)
+        val btnQuestion = findViewById<FloatingActionButton>(R.id.questionUser)
 
         btnText.setOnClickListener {
             val intent = Intent(this, TextEntryActivity::class.java)
@@ -33,8 +34,9 @@ class UserActivity : AppCompatActivity() {
         }
 
         btnExit.setOnClickListener {
-
             finish()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -8,10 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Models.Problem
 import com.example.myapplication.R
 
-
 class ProblemAdapter(private val problemList: List<Problem>) : RecyclerView.Adapter<ProblemAdapter.ProblemViewHolder>() {
 
-    // Объявляем интерфейс обработчика кликов
     interface OnItemClickListener {
         fun onItemClick(problem: Problem)
     }
@@ -24,6 +22,7 @@ class ProblemAdapter(private val problemList: List<Problem>) : RecyclerView.Adap
     }
 
     inner class ProblemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvProblemNumber: TextView = itemView.findViewById(R.id.tvProblemNumber)
         val tvProblemTitle: TextView = itemView.findViewById(R.id.tvProblemTitle)
         val tvProblemContent: TextView = itemView.findViewById(R.id.tvProblemContent)
 
@@ -46,6 +45,9 @@ class ProblemAdapter(private val problemList: List<Problem>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ProblemViewHolder, position: Int) {
         val currentProblem = problemList[position]
+        val problemNumber = (position + 1).toString()
+
+        holder.tvProblemNumber.text = "Problem №$problemNumber"
         holder.tvProblemTitle.text = currentProblem.title
         holder.tvProblemContent.text = currentProblem.content
     }
@@ -54,3 +56,4 @@ class ProblemAdapter(private val problemList: List<Problem>) : RecyclerView.Adap
         return problemList.size
     }
 }
+

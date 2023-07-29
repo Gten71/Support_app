@@ -1,52 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationX="-14dp">
+
+        <ImageView
+            android:id="@+id/imageClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:srcCompat="@drawable/baseline_arrow_back_24" />
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>
 
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Заголовок" />
+        android:hint="Title"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
     <EditText
         android:id="@+id/etContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Содержание"
+        android:gravity="top"
+        android:hint="Description"
         android:minLines="5"
-        android:gravity="top" />
+        app:layout_constraintTop_toBottomOf="@+id/etTitle"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
     <TextView
         android:id="@+id/tvSelectedEmployer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Выбранный работодатель: "
-        android:textSize="16sp" />
+        android:text="Select worker: "
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/etContent"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
     <RadioGroup
         android:id="@+id/radioGroupEmployers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectedEmployer"
+        tools:layout_editor_absoluteX="-34dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp">
 
-        <!-- Replace 'Your_Employer_Name' with the actual name of the employer -->
         <RadioButton
-            android:id="@+id/rbEmployerYourEmployer"
+            android:id="@+id/plumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your_Employer_Name" />
+            android:text="Plumber" />
 
-        <!-- Add more RadioButtons for other employers if needed -->
-        <!-- <RadioButton
-            android:id="@+id/rbEmployerOtherEmployer"
+        <RadioButton
+            android:id="@+id/electrician"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Other_Employer_Name" /> -->
+            android:text="Electrician" />
+
+        <RadioButton
+            android:id="@+id/gasman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gasman" />
+
 
     </RadioGroup>
 
@@ -54,6 +98,22 @@
         android:id="@+id/btnSend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send" />
+        android:text="Send"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupEmployers"
+        tools:layout_editor_absoluteX="-34dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/floatingActionButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="34dp"
+    android:layout_marginBottom="108dp"
+    android:clickable="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:srcCompat="@drawable/baseline_question_mark_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     if (user != null) {
-                        // Успешный вход в систему, получение UID текущего пользователя
                         val uid = user.uid
 
                         // Проверка типа аккаунта и перенаправление в соответствующую активити
@@ -84,15 +83,12 @@ class MainActivity : AppCompatActivity() {
                     // Обработка ошибок входа в систему
                     when (val exception = task.exception) {
                         is FirebaseAuthInvalidUserException -> {
-                            // Неверный адрес электронной почты или аккаунт не существует
                             Toast.makeText(this, "Неверный адрес электронной почты или аккаунт не существует", Toast.LENGTH_SHORT).show()
                         }
                         is FirebaseAuthInvalidCredentialsException -> {
-                            // Неверный пароль
                             Toast.makeText(this, "Неверный пароль", Toast.LENGTH_SHORT).show()
                         }
                         else -> {
-                            // Общая ошибка входа в систему
                             Toast.makeText(this, "Ошибка входа в систему: ${exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -133,12 +129,9 @@ class MainActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Registration success, navigate to another activity or do something else
                     val intent = Intent(this, UserActivity::class.java)
                     startActivity(intent)
                 } else {
-                    // Registration failed, handle the error (show a toast, etc.)
-                    // For example:
                     Toast.makeText(this, "Registration failed.", Toast.LENGTH_SHORT).show()
                 }
             }

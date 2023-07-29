@@ -15,8 +15,9 @@ import com.google.firebase.database.ValueEventListener
 class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) : RecyclerView.Adapter<AnswerAdapter.AnswerViewHolder>() {
 
     inner class AnswerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvResponseText: TextView = itemView.findViewById(R.id.tvResponseText)
+        val tvAnswerNumber: TextView = itemView.findViewById(R.id.tvAnswerNumber)
         val tvProblemTitle: TextView = itemView.findViewById(R.id.tvProblemTitle)
+        val tvResponseText: TextView = itemView.findViewById(R.id.tvResponseText)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnswerViewHolder {
@@ -26,6 +27,9 @@ class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) :
 
     override fun onBindViewHolder(holder: AnswerViewHolder, position: Int) {
         val (problemTitle, responseText) = answerList[position]
+        val answerNumber = (position + 1).toString()
+
+        holder.tvAnswerNumber.text = "Answer №$answerNumber"
         holder.tvProblemTitle.text = problemTitle
         holder.tvResponseText.text = responseText
 

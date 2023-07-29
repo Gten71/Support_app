@@ -21,10 +21,4 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign In" />
-
 </LinearLayout>

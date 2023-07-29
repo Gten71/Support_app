@@ -29,7 +29,6 @@
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
         </RelativeLayout>
 
-
     </androidx.appcompat.widget.Toolbar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

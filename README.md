@@ -5,4 +5,4 @@ U can only reg\log  <br>
     //..// <br>
     ".write": false <br>
   } <br>
-  U can only reg\log and see from db
+  U can only reg\log and read from db

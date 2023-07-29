@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.EmployerQuestionActivity
 import com.example.myapplication.Models.Problem
 import com.example.myapplication.QuestionActivity
 import com.example.myapplication.R
@@ -39,7 +40,7 @@ class RespondActivity : AppCompatActivity() {
         val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         floatingActionButton.setOnClickListener {
             // Replace NewActivity::class.java with the activity you want to navigate to.
-            val intent = Intent(this, QuestionActivity::class.java)
+            val intent = Intent(this, EmployerQuestionActivity::class.java)
             startActivity(intent)
         }
         val imageClose = findViewById<ImageView>(R.id.imageClose)
