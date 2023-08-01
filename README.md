@@ -6,7 +6,7 @@ aut mresnyansky@mail.ru pass max777 that superUser <br>
     //..// <br>
     ".write": false <br>
   } <br>
-  U can only reg\log and read from db
+  U can only reg\log and read from db <br>
   Using Firebase: <br>
   FirebaseAuthentication <br>
   Realtime Database <br>

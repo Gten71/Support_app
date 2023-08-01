@@ -35,7 +35,6 @@ class AnsweresActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         floatingActionButton.setOnClickListener {
-            // Replace NewActivity::class.java with the activity you want to navigate to.
             val intent = Intent(this, QuestionActivity::class.java)
             startActivity(intent)
         }

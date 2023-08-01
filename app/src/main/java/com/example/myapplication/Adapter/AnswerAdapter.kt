@@ -11,6 +11,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import android.content.Context
+import android.content.Intent
+import com.example.myapplication.DefaultUserScreen.ReplyActivity
 
 class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) : RecyclerView.Adapter<AnswerAdapter.AnswerViewHolder>() {
 
@@ -18,6 +21,20 @@ class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) :
         val tvAnswerNumber: TextView = itemView.findViewById(R.id.tvAnswerNumber)
         val tvProblemTitle: TextView = itemView.findViewById(R.id.tvProblemTitle)
         val tvResponseText: TextView = itemView.findViewById(R.id.tvResponseText)
+
+        init {
+            itemView.setOnClickListener {
+                val context: Context = itemView.context
+                val (problemTitle, responseText) = answerList[adapterPosition]
+
+                // Запускаем новый активити и передаем в него данные о заголовке и содержании ответа
+                val intent = Intent(context, ReplyActivity::class.java).apply {
+                    putExtra("problemTitle", problemTitle)
+                    putExtra("responseText", responseText)
+                }
+                context.startActivity(intent)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnswerViewHolder {
@@ -31,13 +48,14 @@ class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) :
 
         holder.tvAnswerNumber.text = "Answer №$answerNumber"
         holder.tvProblemTitle.text = problemTitle
-        holder.tvResponseText.text = responseText
+        holder.tvResponseText.text = responseText?.take(20) + if (responseText?.length ?: 0 > 20) "..." else ""
 
         holder.itemView.setOnLongClickListener {
             showDeleteConfirmationDialog(holder)
             true
         }
     }
+
 
     override fun getItemCount(): Int {
         return answerList.size

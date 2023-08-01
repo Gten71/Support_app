@@ -35,6 +35,9 @@
         <activity
             android:name=".DefaultUserScreen.AnsweresActivity"
             android:label="Answeres Activity" />
+        <activity android:name=".DefaultUserScreen.ReplyActivity">
+
+        </activity>
         <activity
             android:name=".EmployerScreen.EmployerActivity"
             android:label="Employer Activity" />

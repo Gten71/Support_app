@@ -66,6 +66,11 @@ class ProblemAdapter(private val problemList: List<Problem>) : RecyclerView.Adap
         holder.itemView.setOnClickListener {
             onItemClick(currentProblem)
         }
+        val maxTextLength = 20
+        val truncatedContent = currentProblem.content?.take(maxTextLength) + if (currentProblem.content?.length ?: 0 > maxTextLength) "..." else ""
+        holder.tvProblemContent.text = truncatedContent
+
+
 
     }
     private fun onItemClick(problem: Problem) {

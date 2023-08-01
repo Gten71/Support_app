@@ -13,6 +13,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.QuestionActivity
 import com.example.myapplication.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -39,6 +40,11 @@ class TextEntryActivity : AppCompatActivity() {
         val imageClose = findViewById<ImageView>(R.id.imageClose)
         imageClose.setOnClickListener {
             finish()
+        }
+        val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        floatingActionButton.setOnClickListener {
+            val intent = Intent(this, QuestionActivity::class.java)
+            startActivity(intent)
         }
 
         val btnSend = findViewById<Button>(R.id.btnSend)
