@@ -36,6 +36,10 @@ class TextEntryActivity : AppCompatActivity() {
         btnChooseImage.setOnClickListener {
             openImagePicker()
         }
+        val imageClose = findViewById<ImageView>(R.id.imageClose)
+        imageClose.setOnClickListener {
+            finish()
+        }
 
         val btnSend = findViewById<Button>(R.id.btnSend)
         btnSend.setOnClickListener {
