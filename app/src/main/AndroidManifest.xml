@@ -29,6 +29,8 @@
             android:name=".DefaultUserScreen.UserActivity"
             android:label="User Activity" />
         <activity
+            android:name=".ChatActivity" />
+        <activity
             android:name=".EmployerScreen.RespondActivity"
             android:label="Respond Activity" />
         <activity android:name=".EmployerQuestionActivity"/>

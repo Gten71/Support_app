@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Adapter.ProblemAdapter
+import com.example.myapplication.ChatActivity
 import com.example.myapplication.EmployerQuestionActivity
 import com.example.myapplication.MainActivity
 import com.example.myapplication.Models.Problem
@@ -28,6 +29,7 @@ class EmployerActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val btnExit = findViewById<FloatingActionButton>(R.id.btnExit)
         val btnQuestion = findViewById<FloatingActionButton>(R.id.questionEmployer)
+        val btnChat = findViewById<FloatingActionButton>(R.id.btnChat)
 
         btnQuestion.setOnClickListener {
             val intent = Intent(this, EmployerQuestionActivity::class.java)
@@ -39,6 +41,13 @@ class EmployerActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        btnChat.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+            intent.putExtra("userId", "G8wWA7X6XzMEYTOksBOsSH53vWk2") // Здесь укажите id обычного пользователя
+            intent.putExtra("userName", "Employers") // Здесь укажите имя обычного пользователя
+            startActivity(intent)
+        }
+
 
         // Получение списка проблем из Firebase
         val databaseRef = FirebaseDatabase.getInstance().reference.child("problems")

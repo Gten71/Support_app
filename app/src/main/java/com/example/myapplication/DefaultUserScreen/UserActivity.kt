@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.ChatActivity
 import com.example.myapplication.MainActivity
 import com.example.myapplication.QuestionActivity
 import com.example.myapplication.R
@@ -18,6 +19,7 @@ class UserActivity : AppCompatActivity() {
         val btnAnswers = findViewById<Button>(R.id.btnAnswers)
         val btnExit = findViewById<FloatingActionButton>(R.id.btnExit)
         val btnQuestion = findViewById<FloatingActionButton>(R.id.questionUser)
+        val btnChat = findViewById<Button>(R.id.btnChat)
 
         btnText.setOnClickListener {
             val intent = Intent(this, TextEntryActivity::class.java)
@@ -36,6 +38,12 @@ class UserActivity : AppCompatActivity() {
         btnExit.setOnClickListener {
             finish()
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        btnChat.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+            intent.putExtra("userId", "Mu3pjnrWKbM0V3aVAY5bpVaQfHG2")
+            intent.putExtra("userName", "Gten")
             startActivity(intent)
         }
     }
