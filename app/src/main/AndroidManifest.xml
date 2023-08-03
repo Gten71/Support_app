@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionActivity" />
+        <activity android:name=".DefaultUserScreen.QuestionActivity" />
         <activity
             android:name=".DefaultUserScreen.UserActivity"
             android:label="User Activity" />
@@ -33,7 +33,7 @@
         <activity
             android:name=".EmployerScreen.RespondActivity"
             android:label="Respond Activity" />
-        <activity android:name=".EmployerQuestionActivity"/>
+        <activity android:name=".EmployerScreen.EmployerQuestionActivity"/>
         <activity
             android:name=".DefaultUserScreen.AnsweresActivity"
             android:label="Answeres Activity" />

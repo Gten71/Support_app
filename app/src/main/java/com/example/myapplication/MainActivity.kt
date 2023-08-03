@@ -13,6 +13,9 @@ import com.example.myapplication.EmployerScreen.EmployerActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import android.content.Context
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,7 +69,8 @@ class MainActivity : AppCompatActivity() {
                     if (user != null) {
                         val uid = user.uid
 
-                        // Проверка типа аккаунта и перенаправление в соответствующую активити
+                        saveUidToSharedPreferences(uid)
+
                         if (uid == "G8wWA7X6XzMEYTOksBOsSH53vWk2") {
                             val intent = Intent(this, EmployerActivity::class.java)
                             startActivity(intent)
@@ -74,27 +78,32 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, UserActivity::class.java)
                             startActivity(intent)
-
-
                             finish()
                         }
                     }
                 } else {
-                    // Обработка ошибок входа в систему
                     when (val exception = task.exception) {
                         is FirebaseAuthInvalidUserException -> {
-                            Toast.makeText(this, "Неверный адрес электронной почты или аккаунт не существует", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Invalid email address or account does not exist", Toast.LENGTH_SHORT).show()
                         }
                         is FirebaseAuthInvalidCredentialsException -> {
-                            Toast.makeText(this, "Неверный пароль", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show()
                         }
                         else -> {
-                            Toast.makeText(this, "Ошибка входа в систему: ${exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Error: ${exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
             }
     }
+
+    private fun saveUidToSharedPreferences(uid: String) {
+        val sharedPref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = sharedPref.edit()
+        editor.putString("uid", uid)
+        editor.apply()
+    }
+
     private fun showSignUpDialog() {
         val dialogView = layoutInflater.inflate(R.layout.activity_sign_up, null)
         val etEmail = dialogView.findViewById<EditText>(R.id.etEmail)
@@ -112,7 +121,6 @@ class MainActivity : AppCompatActivity() {
                 if (password == confirmPassword) {
                     signUp(email, password)
                 } else {
-                    // Passwords don't match, show an error (e.g., a toast)
                     Toast.makeText(this, "Passwords don't match.", Toast.LENGTH_SHORT).show()
                 }
                 dialogInterface.dismiss()
@@ -137,3 +145,4 @@ class MainActivity : AppCompatActivity() {
             }
     }
 }
+

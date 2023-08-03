@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Adapter.ProblemAdapter
 import com.example.myapplication.ChatActivity
-import com.example.myapplication.EmployerQuestionActivity
 import com.example.myapplication.MainActivity
 import com.example.myapplication.Models.Problem
 import com.example.myapplication.R
