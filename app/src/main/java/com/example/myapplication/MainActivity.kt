@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val etEmail = dialogView.findViewById<EditText>(R.id.etEmail)
         val etPassword = dialogView.findViewById<EditText>(R.id.etPassword)
 
-        val dialog = AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
             .setTitle("Sign In")
             .setView(dialogView)
             .setPositiveButton("Sign In") { dialogInterface: DialogInterface, _: Int ->
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         val etPassword = dialogView.findViewById<EditText>(R.id.etPassword)
         val etConfirmPassword = dialogView.findViewById<EditText>(R.id.etConfirmPassword)
 
-        val dialog = AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
             .setTitle("Sign Up")
             .setView(dialogView)
             .setPositiveButton("Sign Up") { dialogInterface: DialogInterface, _: Int ->
