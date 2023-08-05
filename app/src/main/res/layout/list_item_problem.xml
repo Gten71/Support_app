@@ -27,13 +27,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14sp" />
+
     <ImageView
         android:id="@+id/ivProblemPhoto"
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="fitCenter" />
 
     <View
         android:layout_width="match_parent"

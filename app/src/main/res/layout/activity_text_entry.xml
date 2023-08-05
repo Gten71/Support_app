@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -36,6 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Title"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#818181"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:layout_editor_absoluteX="0dp"
         android:layout_marginStart="12dp"
@@ -47,6 +50,8 @@
         android:layout_height="wrap_content"
         android:gravity="top"
         android:hint="Description"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#818181"
         android:minLines="5"
         app:layout_constraintTop_toBottomOf="@+id/etTitle"
         tools:layout_editor_absoluteX="0dp"
@@ -57,6 +62,7 @@
         android:id="@+id/tvSelectedEmployer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
         android:text="Select worker: "
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/etContent"
@@ -78,50 +84,56 @@
             android:id="@+id/plumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
             android:text="Plumber" />
 
         <RadioButton
             android:id="@+id/electrician"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
             android:text="Electrician" />
 
         <RadioButton
             android:id="@+id/gasman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
             android:text="Gasman" />
 
     </RadioGroup>
 
+
     <Button
         android:id="@+id/btnSend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FFFFFF"
         android:text="Send"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupEmployers"
-        tools:layout_editor_absoluteX="-34dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"/>
-
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupEmployers" />
 
     <Button
         android:id="@+id/btnChooseImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#7E8697"
         android:text="Choose Image"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSend" />
 
     <ImageView
         android:id="@+id/selectedImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_margin="16dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/btnChooseImage" />
 
@@ -131,6 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="108dp"
+        android:backgroundTint="#CDCDCD"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
