@@ -33,6 +33,11 @@
         <activity
             android:name=".EmployerScreen.RespondActivity"
             android:label="Respond Activity" />
+        <activity android:name=".popularProblem.PopularProblem1"/>
+        <activity android:name=".popularProblem.PopularProblem2"/>
+        <activity android:name=".popularProblem.PopularProblem3"/>
+        <activity android:name=".popularProblem.PopularProblem4"/>
+        <activity android:name=".popularProblem.PopularProblem5"/>
         <activity android:name=".EmployerScreen.EmployerQuestionActivity"/>
         <activity
             android:name=".DefaultUserScreen.AnsweresActivity"

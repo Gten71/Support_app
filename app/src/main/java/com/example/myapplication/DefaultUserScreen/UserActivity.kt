@@ -8,12 +8,25 @@ import com.example.myapplication.ChatActivity
 import com.example.myapplication.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.preference.PreferenceManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Adapter.ListItemsAdapter
+import com.example.myapplication.Models.ListItem
 import com.example.myapplication.MainActivity
+import com.example.myapplication.popularProblem.PopularProblem1
+import com.example.myapplication.popularProblem.PopularProblem2
+import com.example.myapplication.popularProblem.PopularProblem3
+import com.example.myapplication.popularProblem.PopularProblem4
+import com.example.myapplication.popularProblem.PopularProblem5
 
-class UserActivity : AppCompatActivity() {
+class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var listItems: List<ListItem>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
+
 
         // Retrieve the UID from shared preferences
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
@@ -48,11 +61,32 @@ class UserActivity : AppCompatActivity() {
         }
 
         btnChat.setOnClickListener {
-            // Use the same uid to set the userId and userName for the ChatActivity
             val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("userId", uid)
             intent.putExtra("userName", if (uid == "Mu3pjnrWKbM0V3aVAY5bpVaQfHG2") "Gten > Employer" else "User > Employer")
             startActivity(intent)
         }
+
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // Инициализация списка элементов
+        listItems = listOf(
+            ListItem("The TV doesn't turn on?", PopularProblem1::class.java),
+            ListItem("Is the faucet not working ?", PopularProblem2::class.java),
+            ListItem("Has the light stopped turning on?", PopularProblem3::class.java),
+            ListItem("Has the outlet stopped supplying power ?", PopularProblem4::class.java),
+            ListItem("The PC doesn't turn on?", PopularProblem5::class.java),
+        )
+
+        // Создание и установка адаптера RecyclerView
+        val adapter = ListItemsAdapter(listItems, this)
+        recyclerView.adapter = adapter
+    }
+
+    override fun onItemClick(item: ListItem) {
+        val intent = Intent(this, item.destinationActivity)
+        startActivity(intent)
+
     }
 }

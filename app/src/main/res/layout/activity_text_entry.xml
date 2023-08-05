@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -32,7 +31,6 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- Title and Content EditText -->
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
@@ -55,7 +53,6 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"/>
 
-    <!-- Select Employer TextView and RadioGroup -->
     <TextView
         android:id="@+id/tvSelectedEmployer"
         android:layout_width="match_parent"
@@ -97,7 +94,6 @@
 
     </RadioGroup>
 
-    <!-- Send Button -->
     <Button
         android:id="@+id/btnSend"
         android:layout_width="match_parent"
@@ -108,17 +104,16 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"/>
 
-    <!-- Choose Image Button -->
 
-    <!-- ImageView for Selected Image -->
     <Button
         android:id="@+id/btnChooseImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="136dp"
         android:text="Choose Image"
-        app:layout_constraintTop_toBottomOf="@+id/btnSend"
-        tools:layout_editor_absoluteX="126dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSend" />
 
     <ImageView
         android:id="@+id/selectedImage"

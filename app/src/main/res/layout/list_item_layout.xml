@@ -11,6 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Item Text"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+    <View
+        android:layout_marginTop="10dp"
+        android:id="@+id/dividerLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
 
 </LinearLayout>

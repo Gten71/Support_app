@@ -26,16 +26,13 @@ class RespondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_respond)
 
-        // Связываем элементы интерфейса с их ID
         tvProblemTitle = findViewById(R.id.tvProblemTitle)
         tvProblemContent = findViewById(R.id.tvProblemContent)
         etResponse = findViewById(R.id.etResponse)
         ivProblemPhoto = findViewById(R.id.ivProblemPhoto)
 
-        // Получаем данные о проблеме из интента
         problem = intent.getSerializableExtra("problem") as Problem
 
-        // Отображаем данные на экране
         tvProblemTitle.text = problem.title
         tvProblemContent.text = problem.content
 
@@ -48,7 +45,6 @@ class RespondActivity : AppCompatActivity() {
                 .error(R.drawable.error_image)
                 .into(ivProblemPhoto)
 
-            // Показываем ImageView, если есть фото
             ivProblemPhoto.visibility = View.VISIBLE
         } else {
             // Прячем ImageView, если нет фото
