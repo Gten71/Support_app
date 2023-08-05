@@ -47,7 +47,7 @@ class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) :
         val answerNumber = (position + 1).toString()
 
         holder.tvAnswerNumber.text = "Answer №$answerNumber"
-        holder.tvProblemTitle.text = problemTitle
+        holder.tvProblemTitle.text = "$problemTitle ( Your Title )"
         holder.tvResponseText.text = responseText?.take(20) + if (responseText?.length ?: 0 > 20) "..." else ""
 
         holder.itemView.setOnLongClickListener {

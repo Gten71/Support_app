@@ -9,11 +9,13 @@
         android:id="@+id/tvSenderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#6CAFCA"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvMessageText"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

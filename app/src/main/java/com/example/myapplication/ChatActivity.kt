@@ -13,8 +13,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class ChatActivity : AppCompatActivity() {
-    private lateinit var userId: String // Уникальный идентификатор обычного пользователя
-    private lateinit var userName: String // Имя обычного пользователя
+    private lateinit var userId: String
+    private lateinit var userName: String
     private lateinit var chatReference: DatabaseReference
     private lateinit var messageAdapter: ChatAdapter
     private val messageList: MutableList<Message> = mutableListOf()
@@ -29,12 +29,11 @@ class ChatActivity : AppCompatActivity() {
 
         // Проверяем, что userId и userName не являются пустыми значениями
         if (userId.isEmpty() || userName.isEmpty()) {
-            Toast.makeText(this, "Ошибка: Некорректные данные пользователя", Toast.LENGTH_SHORT).show()
-            finish() // Закрываем активити, если данные некорректны
+            Toast.makeText(this, "Error: Invalid user data", Toast.LENGTH_SHORT).show()
+            finish()
             return
         }
 
-        // Настройка тулбара
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Chat $userName"
@@ -50,7 +49,6 @@ class ChatActivity : AppCompatActivity() {
         recyclerView.adapter = messageAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Получение ссылки на базу данных Firebase для узла "messages"
         chatReference = FirebaseDatabase.getInstance().reference.child("messages")
 
         // Получение списка сообщений из Firebase
