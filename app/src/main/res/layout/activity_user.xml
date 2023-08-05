@@ -3,7 +3,8 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:layout_height="match_parent">
+android:layout_height="match_parent"
+android:background="@drawable/gradient_background">
 
     <Button
         android:id="@+id/btnText"
@@ -11,7 +12,9 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
-        android:text="Text"
+        android:text="Write to us"
+        android:backgroundTint="#CAE5F0"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +25,8 @@ android:layout_height="match_parent">
         android:layout_marginStart="100dp"
         android:layout_marginTop="28dp"
         android:text="Answers"
+        android:backgroundTint="#ffffff"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnText" />
 
@@ -32,6 +37,8 @@ android:layout_height="match_parent">
         android:text="Chat"
         android:layout_marginStart="100dp"
         android:layout_marginTop="28dp"
+        android:backgroundTint="#ffffff"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAnswers" />
 
@@ -46,8 +53,9 @@ android:layout_height="match_parent">
         android:id="@+id/tvHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Popular problems"
+        android:text="Popular problems:"
         android:textSize="24sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@+id/dividerLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +79,7 @@ android:layout_height="match_parent">
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="158dp"
         android:clickable="true"
+        android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_question_mark_24" />
@@ -81,6 +90,7 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginEnd="34dp"
         android:clickable="true"
+        android:backgroundTint="#C5C5C5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionUser"
