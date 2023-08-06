@@ -30,7 +30,7 @@ class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
 
         // Retrieve the UID from shared preferences
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
-        val uid = sharedPref.getString("uid", "default_uid") // Replace "default_uid" with your default value
+        val uid = sharedPref.getString("uid", "default_uid")
 
         val btnText = findViewById<Button>(R.id.btnText)
         val btnAnswers = findViewById<Button>(R.id.btnAnswers)
@@ -63,7 +63,7 @@ class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
         btnChat.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("userId", uid)
-            intent.putExtra("userName", if (uid == "Mu3pjnrWKbM0V3aVAY5bpVaQfHG2") "Gten > Employer" else "User > Employer")
+            intent.putExtra("userName", if (uid == "Mu3pjnrWKbM0V3aVAY5bpVaQfHG2") "Gten" else "User")
             startActivity(intent)
         }
 

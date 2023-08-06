@@ -29,6 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="8dp"
+        android:textColorHint="#C1BEBE"
+        android:textColor="#ffffff"
         android:hint="Text message..."
         android:inputType="textMultiLine" />
 

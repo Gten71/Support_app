@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -34,6 +35,7 @@
         android:id="@+id/tvProblemTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#6CAFCA"
         android:text="Problem"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -46,6 +48,7 @@
         android:id="@+id/tvProblemContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
         android:text="Problem description"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/tvProblemTitle"
@@ -58,6 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Your Answer:"
+        android:textColor="#6CAFCA"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/tvProblemContent"
@@ -73,6 +77,7 @@
         android:inputType="textMultiLine"
         android:maxLines="10"
         android:minLines="5"
+        android:textColor="#ffffff"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layout_editor_absoluteX="16dp"
         android:layout_marginStart="12dp"
@@ -84,6 +89,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#000000"
         android:text="Send answer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etResponse" />
@@ -103,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="108dp"
+        android:backgroundTint="#ffffff"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
