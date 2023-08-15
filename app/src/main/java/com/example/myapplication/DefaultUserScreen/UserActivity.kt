@@ -72,12 +72,18 @@ class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
 
         // Инициализация списка элементов
         listItems = listOf(
-            ListItem("The TV doesn't turn on?", PopularProblem1::class.java),
-            ListItem("Is the faucet not working ?", PopularProblem2::class.java),
-            ListItem("Has the light stopped turning on?", PopularProblem3::class.java),
-            ListItem("Has the outlet stopped supplying power ?", PopularProblem4::class.java),
-            ListItem("The PC doesn't turn on?", PopularProblem5::class.java),
+            ListItem(getString(R.string.problem1), PopularProblem1::class.java),
+            ListItem(getString(R.string.problem2), PopularProblem2::class.java),
+            ListItem(getString(R.string.problem3), PopularProblem3::class.java),
+            ListItem(getString(R.string.problem4), PopularProblem4::class.java),
+            ListItem(getString(R.string.problem5), PopularProblem5::class.java)
         )
+
+        fun updateListItems(newItems: List<ListItem>) {
+            listItems = newItems
+            val adapter = ListItemsAdapter(listItems, this)
+            recyclerView.adapter = adapter
+        }
 
         // Создание и установка адаптера RecyclerView
         val adapter = ListItemsAdapter(listItems, this)

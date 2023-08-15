@@ -7,6 +7,27 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:padding="16dp"
 android:background="@drawable/gradient_background">
+
+    <Button
+        android:id="@+id/btnChangeLanguageToRussian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="На русский"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <Button
+        android:id="@+id/btnChangeLanguageToEnglish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch to English"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"/>
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -25,7 +46,7 @@ android:background="@drawable/gradient_background">
         android:layout_height="wrap_content"
         android:layout_marginEnd="84dp"
         android:backgroundTint="#CAE5F0"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:layout_marginBottom="100dp"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,7 +59,7 @@ android:background="@drawable/gradient_background">
         android:layout_marginTop="30dp"
         android:layout_marginEnd="84dp"
         android:backgroundTint="#FFFFFF"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
         android:textColor="#000000"/>

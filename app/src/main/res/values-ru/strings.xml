@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ваше приложение</string>
+
+    Регистрация и вход
+
+    <string name="sign_in">Войти</string>
+    <string name="cancel">Отмена</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="email">Почта</string>
+    <string name="password">Пароль</string>
+    <string name="conf_password">Подтвердите пароль</string>
+
+    Первое окно пользователя
+
+    <string name="write_to_us">Написать нам</string>
+    <string name="answers">Ответы</string>
+    <string name="chat">Чат</string>
+    <string name="popular_problem">Популярные проблемы</string>
+    <string name="problem1">Телевизор не включается?</string>
+    <string name="problem2">Сломался кран?</string>
+    <string name="problem3">Не работает свет?</string>
+    <string name="problem4">Розетка не подает питание?</string>
+    <string name="problem5">Компьютер не включается?</string>
+
+
+    Активити "Написать нам"
+
+    <string name="title">Заголовок</string>
+    <string name="description">Описание</string>
+    <string name="worker">Выберите рабочего:</string>
+    <string name="worker1">Водопроводчик</string>
+    <string name="worker2">Электрик</string>
+    <string name="worker3">Газовщик</string>
+    <string name="send">Отправить</string>
+    <string name="image">Выбрать фото</string>
+
+
+
+
+</resources>

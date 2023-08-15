@@ -16,11 +16,20 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import android.content.res.Configuration
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    private fun changeLanguage(locale: Locale) {
+        val configuration = Configuration()
+        configuration.setLocale(locale)
+        baseContext.resources.updateConfiguration(configuration, baseContext.resources.displayMetrics)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,6 +46,34 @@ class MainActivity : AppCompatActivity() {
         btnSignUp.setOnClickListener {
             showSignUpDialog()
         }
+
+        val btnChangeToRussian = findViewById<Button>(R.id.btnChangeLanguageToRussian)
+        val btnChangeToEnglish = findViewById<Button>(R.id.btnChangeLanguageToEnglish)
+
+        btnChangeToRussian.setOnClickListener {
+            val locale = Locale("ru")
+            Locale.setDefault(locale)
+            changeLanguage(locale)
+            recreate()
+        }
+
+        btnChangeToEnglish.setOnClickListener {
+            val locale = Locale("en")
+            Locale.setDefault(locale)
+            changeLanguage(locale)
+            recreate()
+        }
+    }
+    private fun setLocale(languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+
+        val configuration = Configuration()
+        configuration.setLocale(locale)
+
+        resources.updateConfiguration(configuration, resources.displayMetrics)
+
+        recreate()
     }
 
     private fun showSignInDialog() {
@@ -45,15 +82,15 @@ class MainActivity : AppCompatActivity() {
         val etPassword = dialogView.findViewById<EditText>(R.id.etPassword)
 
         val dialog = AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
-            .setTitle("Sign In")
+            .setTitle(R.string.sign_in)
             .setView(dialogView)
-            .setPositiveButton("Sign In") { dialogInterface: DialogInterface, _: Int ->
+            .setPositiveButton(R.string.sign_in) { dialogInterface: DialogInterface, _: Int ->
                 val email = etEmail.text.toString()
                 val password = etPassword.text.toString()
                 signIn(email, password)
                 dialogInterface.dismiss()
             }
-            .setNegativeButton("Cancel") { dialogInterface: DialogInterface, _: Int ->
+            .setNegativeButton(R.string.cancel) { dialogInterface: DialogInterface, _: Int ->
                 dialogInterface.dismiss()
             }
             .create()
@@ -111,9 +148,9 @@ class MainActivity : AppCompatActivity() {
         val etConfirmPassword = dialogView.findViewById<EditText>(R.id.etConfirmPassword)
 
         val dialog = AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
-            .setTitle("Sign Up")
+            .setTitle(R.string.sign_up)
             .setView(dialogView)
-            .setPositiveButton("Sign Up") { dialogInterface: DialogInterface, _: Int ->
+            .setPositiveButton(R.string.sign_up) { dialogInterface: DialogInterface, _: Int ->
                 val email = etEmail.text.toString()
                 val password = etPassword.text.toString()
                 val confirmPassword = etConfirmPassword.text.toString()
@@ -125,7 +162,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 dialogInterface.dismiss()
             }
-            .setNegativeButton("Cancel") { dialogInterface: DialogInterface, _: Int ->
+            .setNegativeButton(R.string.cancel) { dialogInterface: DialogInterface, _: Int ->
                 dialogInterface.dismiss()
             }
             .create()
