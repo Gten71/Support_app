@@ -29,7 +29,7 @@ class AnsweresActivity : AppCompatActivity() {
         title = problemTitle // Устанавливаем заголовок активити
 
         recyclerView = findViewById(R.id.recyclerViewAnswers)
-        answerAdapter = AnswerAdapter(answerList)
+        answerAdapter = AnswerAdapter(this, answerList)
         recyclerView.adapter = answerAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)

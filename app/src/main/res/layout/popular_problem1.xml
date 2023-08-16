@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:text="Popular solution:"
+        android:text="@string/prob_solution"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -51,7 +50,7 @@
         android:layout_marginTop="44dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="1) Power cable is unplugged or not connected properly."
+        android:text="@string/sol1.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -63,7 +62,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="2) The remote control batteries are dead or need replacement. "
+        android:text="@string/sol1.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -75,7 +74,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="3) There could be a blown fuse or tripped circuit breaker in the electrical system."
+        android:text="@string/sol1.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -87,7 +86,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="4) The TV's power button or internal power supply may be faulty."
+        android:text="@string/sol1.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -99,7 +98,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="5) The TV might be in sleep mode or has a malfunctioning standby/power-saving feature."
+        android:text="@string/sol1.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 

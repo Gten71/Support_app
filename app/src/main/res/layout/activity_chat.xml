@@ -28,11 +28,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="8dp"
-        android:textColorHint="#C1BEBE"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/text_mess"
+        android:inputType="textMultiLine"
         android:textColor="#ffffff"
-        android:hint="Text message..."
-        android:inputType="textMultiLine" />
+        android:textColorHint="#C1BEBE" />
 
     <Button
         android:id="@+id/btnSendMessage"
@@ -44,6 +47,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="44dp"
-        android:text="Send" />
+        android:text="@string/send" />
 
 </RelativeLayout>

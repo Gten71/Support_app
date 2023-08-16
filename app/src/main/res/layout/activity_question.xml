@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="1)Button 'Write to us' - Ask an employee a question  "
+        android:text="@string/quetxt1"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -50,7 +50,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:textColor="#ffffff"
-        android:text="2) Button 'Answers - Answers to questions'"
+        android:text="@string/quetxt2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -61,7 +61,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:textColor="#ffffff"
-        android:text="3) Button 'Chat' - Chat with employer"
+        android:text="@string/quetxt3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -84,7 +84,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="40dp"
         android:textColor="#ffffff"
-        android:text=" - Exit from account "
+        android:text="@string/exacc"
         app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Explanation 'Answers':"
+        android:text="@string/explanation1"
         android:textColor="#ffffff"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,8 +105,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:text="Title - this is the name of the problem that you are being answered \n \nDescription - Answers to your problem"
+        android:layout_marginTop="8dp"
+        android:text="@string/expltext1"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:text="Explanation 'Chat':"
+        android:text="@string/explanation2"
         android:textColor="#ffffff"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:text="If the support service is online, then it responds"
+        android:text="@string/expltext2"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />

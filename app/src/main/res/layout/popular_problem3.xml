@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:text="Popular solution:"
+        android:text="@string/prob_solution"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -51,7 +50,7 @@
         android:layout_marginTop="44dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="1) The light bulb is burnt out and needs replacement."
+        android:text="@string/sol3.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -63,7 +62,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="2) There could be an issue with the light switch, such as a loose wire or a faulty switch. "
+        android:text="@string/sol3.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -75,7 +74,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="3) The circuit breaker or fuse connected to the light may have tripped or blown."
+        android:text="@string/sol3.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -87,7 +86,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="4) The light socket may be damaged or not making proper contact with the bulb."
+        android:text="@string/sol3.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -99,7 +98,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="5) There might be a problem with the electrical wiring or connections leading to the light fixture."
+        android:text="@string/sol3.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 

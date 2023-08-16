@@ -32,7 +32,6 @@ class ChatAdapter(private val messageList: List<Message>, private val userId: St
         holder.tvSenderName.text = if (!isCurrentUserMessage) currentMessage.senderName else ""
         holder.tvMessageText.text = currentMessage.messageText
 
-        // Выравниваем текстовое сообщение в зависимости от отправителя
         holder.tvMessageText.textAlignment =
             if (isCurrentUserMessage) View.TEXT_ALIGNMENT_TEXT_END else View.TEXT_ALIGNMENT_TEXT_START
     }

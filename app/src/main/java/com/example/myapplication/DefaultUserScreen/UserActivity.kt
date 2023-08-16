@@ -63,7 +63,7 @@ class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
         btnChat.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("userId", uid)
-            intent.putExtra("userName", if (uid == "Mu3pjnrWKbM0V3aVAY5bpVaQfHG2") "Gten" else "User")
+            intent.putExtra("userName", if (uid == "Mu3pjnrWKbM0V3aVAY5bpVaQfHG2") "Gten" else getString(R.string.user))
             startActivity(intent)
         }
 

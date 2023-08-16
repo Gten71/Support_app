@@ -15,7 +15,7 @@ import android.content.Context
 import android.content.Intent
 import com.example.myapplication.DefaultUserScreen.ReplyActivity
 
-class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) : RecyclerView.Adapter<AnswerAdapter.AnswerViewHolder>() {
+class AnswerAdapter(private val context: Context, private val answerList: MutableList<Pair<String, String>>) : RecyclerView.Adapter<AnswerAdapter.AnswerViewHolder>() {
 
     inner class AnswerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvAnswerNumber: TextView = itemView.findViewById(R.id.tvAnswerNumber)
@@ -46,8 +46,11 @@ class AnswerAdapter(private val answerList: MutableList<Pair<String, String>>) :
         val (problemTitle, responseText) = answerList[position]
         val answerNumber = (position + 1).toString()
 
-        holder.tvAnswerNumber.text = "Answer №$answerNumber"
-        holder.tvProblemTitle.text = "$problemTitle ( Your Title )"
+        val answerNumberText = context.getString(R.string.answer_num, answerNumber)
+        val problemTitleText = context.getString(R.string.u_title, problemTitle)
+
+        holder.tvAnswerNumber.text = answerNumberText
+        holder.tvProblemTitle.text = problemTitleText
         holder.tvResponseText.text = responseText?.take(20) + if (responseText?.length ?: 0 > 20) "..." else ""
 
         holder.itemView.setOnLongClickListener {

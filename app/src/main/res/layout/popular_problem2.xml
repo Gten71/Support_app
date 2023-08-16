@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:text="Popular solution:"
+        android:text="@string/prob_solution"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -51,7 +51,7 @@
         android:layout_marginTop="44dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="1) The water supply to the faucet is turned off or restricted."
+        android:text="@string/sol2.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -63,7 +63,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="2) There might be a clog or blockage in the faucet's aerator or water pipes. "
+        android:text="@string/sol2.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -75,7 +75,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="3) The faucet's handle or valve could be damaged or stuck."
+        android:text="@string/sol2.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -87,7 +87,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="4) The faucet's cartridge or washer may be worn out or broken."
+        android:text="@string/sol2.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -99,7 +99,7 @@
         android:layout_marginTop="32dp"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="5) There could be a problem with the plumbing system or water pressure."
+        android:text="@string/sol2.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 

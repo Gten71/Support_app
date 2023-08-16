@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Your App</string>
     <string name="sign_in">Sign In</string>
     <string name="cancel">Cancel</string>
@@ -27,5 +27,64 @@
     <string name="worker3">Gasman</string>
     <string name="send">Send</string>
     <string name="image">Chose image</string>
+
+    Chat
+
+    <string name="user">User</string>
+    <string name="employer">Employer</string>
+    <string name="text_mess">Text message...</string>
+    <string name="chat_t">Chat</string>
+
+    Activity "Answers"
+
+    <string name="answer_num">Answer №%1$s</string>
+    <string name="u_title">%1$s ( Your Title )</string>
+
+    Stage "Popular problem"
+
+    <string name="prob_solution">Popular solution:</string>
+    First problem:
+    <string name="sol1.1">1) Power cable is unplugged or not connected properly.</string>
+    <string name="sol1.2">2) The remote control batteries are dead or need replacement.</string>
+    <string name="sol1.3">3) There could be a blown fuse or tripped circuit breaker in the electrical system.</string>
+    <string name="sol1.4">4) The TV s power button or internal power supply may be faulty.</string>
+    <string name="sol1.5">5) The TV might be in sleep mode or has a malfunctioning standby/power-saving feature.</string>
+    Second problem:
+    <string name="sol2.1">1) The water supply to the faucet is turned off or restricted.</string>
+    <string name="sol2.2">2) There might be a clog or blockage in the faucet s aerator or water pipes.</string>
+    <string name="sol2.3">3) The faucet s handle or valve could be damaged or stuck.</string>
+    <string name="sol2.4">4) The faucet s cartridge or washer may be worn out or broken.</string>
+    <string name="sol2.5">5) There could be a problem with the plumbing system or water pressure.</string>
+    Third problem:
+    <string name="sol3.1">1) The light bulb is burnt out and needs replacement.</string>
+    <string name="sol3.2">2) There could be an issue with the light switch, such as a loose wire or a faulty switch.</string>
+    <string name="sol3.3">3) The circuit breaker or fuse connected to the light may have tripped or blown.</string>
+    <string name="sol3.4">4) The light socket may be damaged or not making proper contact with the bulb.</string>
+    <string name="sol3.5">5) There might be a problem with the electrical wiring or connections leading to the light fixture.</string>
+    Fourth problem:
+    <string name="sol4.1">1) The circuit breaker connected to the outlet may have tripped or blown.</string>
+    <string name="sol4.2">2) There could be a loose or damaged wire connection inside the outlet.</string>
+    <string name="sol4.3">3) The outlet itself might be faulty or worn out and needs replacement.</string>
+    <string name="sol4.4">4) A ground fault interrupter (GFI) or residual current device (RCD) may have been triggered, cutting off the power supply.</string>
+    <string name="sol4.5">5) An overload on the circuit or a short circuit in the wiring could have caused the outlet to stop working.</string>
+    Fifth problem:
+    <string name="sol5.1">1) The power cable is unplugged or not connected properly.</string>
+    <string name="sol5.2">2) The power supply unit (PSU) may be faulty or not receiving power.</string>
+    <string name="sol5.3">3) There could be a problem with the motherboard, such as a damaged component or a loose connection.</string>
+    <string name="sol5.4">4) The PC s power button or its wiring might be malfunctioning.</string>
+    <string name="sol5.5">5) The PC might be experiencing an issue with the RAM, causing it not to boot.</string>
+
+    Button explanation for default user
+
+    <string name="quetxt1">1) Button "Write to us" - Ask an employee a question</string>
+    <string name="quetxt2">2) Button "Answers" - Answers to questions</string>
+    <string name="quetxt3" >3) Button "Chat" - Chat with employer</string>
+    <string name="exacc"> - Exit from account </string>
+    <string name="explanation1">Explanation "Answers":</string>
+    <string name="expltext1">Title - this is the name of the problem that you are being answered\n\nDescription - Answers to your problem</string>
+
+    <string name="explanation2">Explanation "Chat":</string>
+    <string name="expltext2">If the support service is online, then it responds</string>
+
 
 </resources>

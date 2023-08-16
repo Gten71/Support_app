@@ -43,7 +43,7 @@ class EmployerActivity : AppCompatActivity() {
         btnChat.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
             intent.putExtra("userId", "G8wWA7X6XzMEYTOksBOsSH53vWk2") // Здесь укажите id обычного пользователя
-            intent.putExtra("userName", "Employers") // Здесь укажите имя обычного пользователя
+            intent.putExtra("userName", getString(R.string.employer)) // Здесь укажите имя обычного пользователя
             startActivity(intent)
         }
 
