@@ -60,7 +60,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your Answer:"
+        android:text="@string/answer"
         android:textColor="#6CAFCA"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -91,7 +91,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#FFFFFF"
         android:textColor="#000000"
-        android:text="Send answer"
+        android:text="@string/send"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etResponse" />
     <ImageView

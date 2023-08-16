@@ -1,5 +1,6 @@
 package com.example.myapplication.Adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import com.example.myapplication.R
 import com.google.firebase.storage.FirebaseStorage
 import com.bumptech.glide.Glide
 
-class ProblemAdapter(private val problemList: List<Problem>) : RecyclerView.Adapter<ProblemAdapter.ProblemViewHolder>() {
+class ProblemAdapter(private val context: Context, private val problemList: List<Problem>) : RecyclerView.Adapter<ProblemAdapter.ProblemViewHolder>() {
 
     // Интерфейс для обработки кликов
     interface OnItemClickListener {
@@ -42,9 +43,9 @@ class ProblemAdapter(private val problemList: List<Problem>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: ProblemViewHolder, position: Int) {
         val currentProblem = problemList[position]
 
-        holder.tvProblemNumber.text = "Problem № ${position + 1}"
+        val problemNumberText = context.getString(R.string.problem_number_format, position + 1)
+        holder.tvProblemNumber.text = problemNumberText
         holder.tvProblemTitle.text = currentProblem.title
-        holder.tvProblemContent.text = currentProblem.content
 
         // Check if photoUrl is not null and not empty
         val photoUrl = currentProblem.photoUrl

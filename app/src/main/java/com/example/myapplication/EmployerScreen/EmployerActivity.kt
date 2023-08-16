@@ -23,7 +23,7 @@ class EmployerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_employer)
 
         recyclerView = findViewById(R.id.recyclerViewProblems)
-        problemAdapter = ProblemAdapter(problemList)
+        problemAdapter = ProblemAdapter(this,problemList)
         recyclerView.adapter = problemAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         val btnExit = findViewById<FloatingActionButton>(R.id.btnExit)

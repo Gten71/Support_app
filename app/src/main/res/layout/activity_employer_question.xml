@@ -40,7 +40,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="The main screen shows the problems that users ask by selecting the one you want to answer, click on it and you have an expanded this problem and there you can also answer this problem"
+        android:text="@string/questextemp"
         android:textColor="#ffffff"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,10 +64,10 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="60dp"
         android:textColor="#FFFFFF"
-        android:text=" - Exit from account"
+        android:text="@string/exacc"
         app:layout_constraintStart_toEndOf="@+id/floatingActionButton3"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 

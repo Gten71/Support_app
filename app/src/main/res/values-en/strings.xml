@@ -82,9 +82,16 @@
     <string name="exacc"> - Exit from account </string>
     <string name="explanation1">Explanation "Answers":</string>
     <string name="expltext1">Title - this is the name of the problem that you are being answered\n\nDescription - Answers to your problem</string>
-
     <string name="explanation2">Explanation "Chat":</string>
     <string name="expltext2">If the support service is online, then it responds</string>
+
+
+    Employer account
+
+    <string name="user_problem">Users problems</string>
+    <string name="problem_number_format">Problem № %1$d</string>
+    <string name="answer">Your Answer</string>
+    <string name="questextemp">The main screen shows the problems that users ask by selecting the one you want to answer, click on it and you have an expanded this problem and there you can also answer this problem</string>
 
 
 </resources>
