@@ -8,9 +8,8 @@ data class Problem(
     var title: String,
     val content: String? = "",
     var employer: String? = null,
-    var photoUrl: String? = null // New field for storing the photo URL
+    var photoUrl: String? = null
 )
 : Serializable {
-    // Добавьте пустой конструктор, необходимый для работы с Firebase
     constructor() : this("", "", "")
 }

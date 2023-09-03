@@ -24,9 +24,9 @@ class AnsweresActivity : AppCompatActivity() {
         setContentView(R.layout.activity_answeres)
 
         problemKey = intent.getStringExtra("problemKey") ?: ""
-        problemTitle = intent.getStringExtra("problemTitle") ?: "" // Получаем заголовок проблемы
+        problemTitle = intent.getStringExtra("problemTitle") ?: ""
 
-        title = problemTitle // Устанавливаем заголовок активити
+        title = problemTitle
 
         recyclerView = findViewById(R.id.recyclerViewAnswers)
         answerAdapter = AnswerAdapter(this, answerList)
@@ -57,7 +57,7 @@ class AnsweresActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Обработка ошибки, если не удалось получить данные из Firebase
+                // Обработка ошибки если не удалось получить данные из Firebase
             }
         })
     }

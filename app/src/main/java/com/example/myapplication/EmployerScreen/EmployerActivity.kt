@@ -1,5 +1,6 @@
 package com.example.myapplication.EmployerScreen
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -36,14 +37,20 @@ class EmployerActivity : AppCompatActivity() {
         }
 
         btnExit.setOnClickListener {
-            finish()
+            val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.putBoolean("is_authenticated", false)
+            editor.putString("user_type","")
+            editor.apply()
+
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btnChat.setOnClickListener {
             val intent = Intent(this, ChatActivity::class.java)
-            intent.putExtra("userId", "G8wWA7X6XzMEYTOksBOsSH53vWk2") // Здесь укажите id обычного пользователя
-            intent.putExtra("userName", getString(R.string.employer)) // Здесь укажите имя обычного пользователя
+            intent.putExtra("userId", "G8wWA7X6XzMEYTOksBOsSH53vWk2")
+            intent.putExtra("userName", getString(R.string.employer))
             startActivity(intent)
         }
 

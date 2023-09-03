@@ -34,6 +34,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val isAuthenticated = sharedPref.getBoolean("is_authenticated", false)
+        val userType = sharedPref.getString("user_type", "")
+
+        if (isAuthenticated) {
+            if (userType == "user") {
+                val intent = Intent(this, UserActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else if (userType == "employer") {
+                val uid = sharedPref.getString("uid", "")
+                if (uid == "G8wWA7X6XzMEYTOksBOsSH53vWk2") {
+                    val intent = Intent(this, EmployerActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+        }
+
         auth = FirebaseAuth.getInstance()
 
         val btnSignIn = findViewById<Button>(R.id.btnSignIn)
@@ -99,6 +119,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signIn(email: String, password: String) {
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -106,8 +131,11 @@ class MainActivity : AppCompatActivity() {
                     if (user != null) {
                         val uid = user.uid
 
-                        saveUidToSharedPreferences(uid)
-
+                        if (uid == "G8wWA7X6XzMEYTOksBOsSH53vWk2") {
+                            saveUidAndUserTypeToSharedPreferences(uid, "employer")
+                        } else {
+                            saveUidAndUserTypeToSharedPreferences(uid, "user")
+                        }
                         if (uid == "G8wWA7X6XzMEYTOksBOsSH53vWk2") {
                             val intent = Intent(this, EmployerActivity::class.java)
                             startActivity(intent)
@@ -130,15 +158,9 @@ class MainActivity : AppCompatActivity() {
                             Toast.makeText(this, "Error: ${exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
                         }
                     }
+
                 }
             }
-    }
-
-    private fun saveUidToSharedPreferences(uid: String) {
-        val sharedPref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = sharedPref.edit()
-        editor.putString("uid", uid)
-        editor.apply()
     }
 
     private fun showSignUpDialog() {
@@ -171,6 +193,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signUp(email: String, password: String) {
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -181,5 +208,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
+
+
+    private fun saveUidAndUserTypeToSharedPreferences(uid: String, userType: String) {
+        val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putBoolean("is_authenticated", true)
+        editor.putString("user_type", userType)
+        editor.apply()
+    }
+
 }
 

@@ -73,7 +73,6 @@ class RespondActivity : AppCompatActivity() {
                                 if (task.isSuccessful) {
                                     finish()
                                 } else {
-                                    // Обработка ошибки, если не удалось отправить ответ
                                 }
                             }
                     }
@@ -81,14 +80,12 @@ class RespondActivity : AppCompatActivity() {
             }
         }
 
-        // Добавляем обработчик нажатия на кнопку "Question"
         val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         floatingActionButton.setOnClickListener {
             val intent = Intent(this, EmployerQuestionActivity::class.java)
             startActivity(intent)
         }
 
-        // Добавляем обработчик нажатия на кнопку "Close"
         val imageClose = findViewById<ImageView>(R.id.imageClose)
         imageClose.setOnClickListener {
             finish()

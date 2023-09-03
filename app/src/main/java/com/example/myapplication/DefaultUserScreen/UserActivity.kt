@@ -1,5 +1,6 @@
 package com.example.myapplication.DefaultUserScreen
 
+import android.content.Context
 import android.os.Bundle
 import android.content.Intent
 import android.widget.Button
@@ -28,7 +29,6 @@ class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
         setContentView(R.layout.activity_user)
 
 
-        // Retrieve the UID from shared preferences
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
         val uid = sharedPref.getString("uid", "default_uid")
 
@@ -37,6 +37,7 @@ class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
         val btnExit = findViewById<FloatingActionButton>(R.id.btnExit)
         val btnQuestion = findViewById<FloatingActionButton>(R.id.questionUser)
         val btnChat = findViewById<Button>(R.id.btnChat)
+
 
 
         btnText.setOnClickListener {
@@ -55,9 +56,15 @@ class UserActivity : AppCompatActivity(), ListItemsAdapter.OnItemClickListener {
         }
 
         btnExit.setOnClickListener {
-            finish()
+            val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.putBoolean("is_authenticated", false)
+            editor.putString("user_type", "")
+            editor.apply()
+
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         btnChat.setOnClickListener {
